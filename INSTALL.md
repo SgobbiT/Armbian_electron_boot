@@ -1,10 +1,12 @@
-# install
+Procedura per l'avvio automatico di un'applicazione electron al posto del desktop manager
+
+# Installazione
 
 ## Prima parte
 Procedura setup come utente root
 
 ```shell
-# install debian using [netinst](https://www.debian.org/CD/netinst/)
+# Installare Armbian Debian server (http://www.armbian.com/download/)
 
 # Aggiornamento e installazione pacchetti necessari
 aptitude update
@@ -43,3 +45,9 @@ chmod +x $HOME/.xinitrc
 # Copiare la propria app electron nella sottocartella boot nella home
 git clone git://github.com/ahdinosaur/bonetron $HOME/boot
 ```
+
+
+## Attualmente X non parte...
+Ho installato i seguenti pacchetti (Risolto primo errore)
+apt-get install xorg xutils xserver-xorg xterm xserver-xorg-video-fbdev xserver-xorg-video-vesa
+
