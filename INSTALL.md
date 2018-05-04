@@ -8,6 +8,10 @@ Procedura setup come utente root
 ```shell
 # Installare Armbian Debian server (http://www.armbian.com/download/)
 
+# Aggiungere il repository nodejs
+echo "deb http://deb.nodesource.com/node_10.x buster main" > /etc/apt/sources.list
+wget -qO- https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add -
+
 # Aggiornamento e installazione pacchetti necessari
 aptitude update
 aptitude upgrade -y
