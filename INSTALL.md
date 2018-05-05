@@ -1,5 +1,8 @@
 Procedura per l'avvio automatico di un'applicazione electron al posto del desktop manager
 
+### N.B. Attualmente X non parte...
+Ho installato i seguenti pacchetti (Risolto primo errore)
+
 # Installazione
 
 ## Prima parte
@@ -9,7 +12,7 @@ Procedura setup come utente root
 # Installare Armbian Debian server (http://www.armbian.com/download/)
 
 # Aggiungere il repository nodejs
-echo "deb http://deb.nodesource.com/node_10.x buster main" > /etc/apt/sources.list
+echo "deb http://deb.nodesource.com/node_10.x buster main" >> /etc/apt/sources.list
 wget -qO- https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add -
 
 # Aggiornamento e installazione pacchetti necessari
@@ -49,9 +52,4 @@ chmod +x $HOME/.xinitrc
 # Copiare la propria app electron nella sottocartella boot nella home
 git clone git://github.com/ahdinosaur/bonetron $HOME/boot
 ```
-
-
-## Attualmente X non parte...
-Ho installato i seguenti pacchetti (Risolto primo errore)
-apt-get install xorg xutils xserver-xorg xterm xserver-xorg-video-fbdev xserver-xorg-video-vesa
 
