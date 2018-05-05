@@ -15,17 +15,17 @@ Procedura setup come utente root
 # Installare Armbian Debian server (http://www.armbian.com/download/)
 
 # Aggiungere il repository nodejs
-echo "deb http://deb.nodesource.com/node_10.x buster main" >> /etc/apt/sources.list
+echo "deb http://deb.nodesource.com/node_10.x stretch main" >> /etc/apt/sources.list
 wget -qO- https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add -
 
 # Aggiornamento e installazione pacchetti necessari
-aptitude update
-aptitude upgrade -y
-aptitude install -y git vim curl wget zip # dev
-aptitude install -y make gcc g++ # build
-aptitude install -y ntp ntpdate # time
-aptitude install -y xinit # x11
-aptitude install -y nodejs npm libnotify4 gconf2 libnss3 # electron
+apt-get update
+apt-get upgrade -y
+#apt-get install -y git vim curl wget zip # dev
+#apt-get install -y make gcc g++ # build
+apt-get install -y ntp ntpdate # time
+apt-get install -y xinit # x11
+apt-get install -y nodejs npm libnotify4 gconf2 libnss3 # electron
 
 # Impostazione fuso orario
 mv /etc/localtime /etc/localtime.old
@@ -35,7 +35,7 @@ ntpdate pool.ntp.org
 systemctl start ntp.service
 
 # Installazione e setup di nodm display manager
-aptitude install -y nodm
+apt-get install -y nodm
 sed -i "s/NODM_ENABLED=false/NODM_ENABLED=true/" /etc/default/nodm
 sed -i "s/NODM_USER=root/NODM_USER=${user}/" /etc/default/nodm
 sed -i "s/NODM_XSESSION=\/etc\/X11\/Xsession/NODM_XSESSION=\/home\/${user}\/.xinitrc/" /etc/default/nodm
