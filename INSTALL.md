@@ -1,7 +1,7 @@
 Procedura per l'avvio automatico di un'applicazione electron al posto del desktop manager
 
 N.B. Attualmente X non parte...
-Il desktop completo parte (TODO cercare i pacchetti mancanti)
+Installando il desktop completo parte (TODO cercare i pacchetti mancanti)
 ```shell
 apt-get install task-mate-desktop
 ```
@@ -25,14 +25,10 @@ apt-get upgrade -y
 #apt-get install -y make gcc g++ # build
 apt-get install -y ntp ntpdate # time
 apt-get install -y xinit # x11
-apt-get install -y nodejs npm libnotify4 gconf2 libnss3 # electron
+apt-get install -y nodejs libnotify4 gconf2 libnss3 # electron
 
 # Impostazione fuso orario
-mv /etc/localtime /etc/localtime.old
-ln -s /usr/share/zoneinfo/Europe/Rome /etc/localtime
-pkill ntpd
-ntpdate pool.ntp.org
-systemctl start ntp.service
+dpkg-reconfigure tzdata
 
 # Installazione e setup di nodm display manager
 apt-get install -y nodm
