@@ -1,7 +1,10 @@
 Procedura per l'avvio automatico di un'applicazione electron al posto del desktop manager
 
-### N.B. Attualmente X non parte...
-Ho installato i seguenti pacchetti (Risolto primo errore)
+N.B. Attualmente X non parte...
+Il desktop completo parte (TODO cercare i pacchetti mancanti)
+```shell
+apt-get install task-mate-desktop
+```
 
 # Installazione
 
